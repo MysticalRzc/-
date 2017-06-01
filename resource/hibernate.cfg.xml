@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+<!--
+		<property name="connection.url">
+		jdbc:mysql://114.215.93.239:3306/jobspace 
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">lduyfl@316</property>  	 -->
+		
+		
+		<property name="connection.url">
+		 jdbc:mysql://localhost:3306/jobspace
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">123456</property> 
+		 
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- 使用C3P0连接池 -->
+		<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.max_size">5</property>
+		<property name="hibernate.c3p0.min_size">1</property>
+		<property name="hibernate.c3p0.timeout">15000</property>
+		<property name="hibernate.c3p0.max_statements">0</property>
+		<property name="hibernate.c3p0.idle_test_period">200</property>
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+
+		<mapping class="com.campus.student.model.TStudentInfo"/>
+		<mapping class="com.campus.resume.model.TResume"/>
+		<mapping class="com.campus.recruitment.model.RecruitInfo"/>
+		<mapping class="com.campus.company.model.CompanyInfo"/>
+ 		<mapping class="com.campus.resume_recommend.model.TResumeRecommend"/>
+		<mapping class="com.campus.recruit_recommend.model.TRecruitRecommend"/>
+		
+<!--	<mapping class="com.catv.common.model.AreaInfoModel"/>
+		<mapping class="com.catv.common.model.LinkModel"/>
+ -->
+
+	
+    </session-factory>
+</hibernate-configuration>
